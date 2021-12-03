@@ -18,7 +18,7 @@ public class Menu {
     private void printMenu(Iterator iterator) {
         while (iterator.hasNext()) {
             Restaurant menuItem = (Restaurant)iterator.next();
-            System.out.print("Name: " + menuItem.getName() + ", ");
+            System.out.print(menuItem.getName() + ", ");
             System.out.print("Price: " + menuItem.getPrice() + " -- \n");
         }
     }

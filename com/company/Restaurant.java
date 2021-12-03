@@ -1,4 +1,5 @@
 package com.company;
+import java.text.NumberFormat;
 
 public class Restaurant {
     private String name;
@@ -17,4 +18,10 @@ public class Restaurant {
         return price;
     }
 
+    public String toString()
+    {
+        NumberFormat fmt = NumberFormat.getCurrencyInstance();
+        String strTab = name.length() > 8 ? "\t" : "\t\t";
+        return name + strTab + fmt.format(price) + "\t\t";
+    }
 }

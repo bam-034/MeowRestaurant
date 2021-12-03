@@ -7,10 +7,10 @@ public class DessertHouse extends Food{
 
     public DessertHouse(){
         menuItems = new ArrayList();
-        addItem("K&B’s Pancake Breakfast", 2.99);
-        addItem("Regular Pancake Breakfast", 2.99);
-        addItem("Blueberry Pancakes", 3.49);
-        addItem("Waffles", 3.59);
+        addItem("1. K&B’s Pancake Breakfast", 2.99);
+        addItem("2. Regular Pancake Breakfast", 2.99);
+        addItem("3. Blueberry Pancakes", 3.49);
+        addItem("4. Waffles", 3.59);
     }
 
     public void addItem(String name, double price){

@@ -7,10 +7,10 @@ public class DinerHouse extends Food {
 
     public DinerHouse() {
         menuItems = new Restaurant[MAX_ITEMS];
-        addItem("Vegetarian BLT",  2.99);
-        addItem("BLT",  2.99);
-        addItem("Soup of the day",  3.29);
-        addItem("Hotdog",  3.05);
+        addItem("5. Vegetarian BLT",  2.99);
+        addItem("6. BLT",  2.99);
+        addItem("7. Soup of the day",  3.29);
+        addItem("8. Hotdog",  3.05);
     }
 
     @Override
