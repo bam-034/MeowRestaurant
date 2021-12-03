@@ -6,9 +6,8 @@ import java.util.*;
 import java.text.NumberFormat;
 
 public class Main {
-    private static int numOfCart;
-    //ArrayList items;
-    private Restaurant[] menuItems;
+    //private static int numOfCart;
+    //private Restaurant[] menuItems;
 
         public static void mainMenu(){
             System.out.println("\nWelcome to Meow Restaurant Delivery Service!\n");
@@ -20,29 +19,28 @@ public class Main {
 
             //menu.printMenu();
             Scanner userInput = new Scanner(System.in);
-            System.out.println("Please select number");
+            System.out.println("Please select number: ");
             int num = userInput.nextInt();
-            if (num >= 1 || num >= 2) {
+            if (num == 1 || num == 2) {
                 if(num == 1){
                     order();
                 }
-                else{
+                if(num == 2){
                     exit();
                 }
             }
             else{
-                System.out.println("Incorrect number");
+                System.out.println("Incorrect number!");
+                mainMenu();
             }
         }
 
         public static void order(){
             String foodName;
-            Double price;
-            Double paids;
+            double price;
+            double paids;
 
-            Double total = 0.0;
-            //Restaurant[] foods = new Restaurant[100];
-            ArrayList<Restaurant> foods = new ArrayList<Restaurant>();
+            double total = 0.0;
 
             DessertHouse dessertHouseMenu = new DessertHouse();
             DinerHouse dinerMenu = new DinerHouse();
@@ -55,22 +53,26 @@ public class Main {
             Scanner userInput = new Scanner(System.in);
             do
             {
-                System.out.println( "Enter the name of food you want to order: " );
+                System.out.println("Enter the name of food you want to order: ");
                 foodName = userInput.nextLine();
 
-                System.out.println( "Enter the  price: " );
+                System.out.println("Enter the food's price: ");
                 price = userInput.nextDouble();
+                while(price < 0 ){
+                    System.out.println("Please input again: ");
+                    price = userInput.nextDouble();
+                };
                 userInput.nextLine();
 
                 cart.add(new Restaurant(foodName,price));
 
-                System.out.println( "Continue shopping (y/n)? " );
+                System.out.println("Continue select (y/n)? ");
                 keepShopping = userInput.nextLine();
             }
             while(keepShopping.equalsIgnoreCase( "y" ));
 
             System.out.println("-----------------------------------------------------------");
-            System.out.println("\n\nFinal Shopping Cart totals" );
+            System.out.println("\nFinal Shopping Cart totals" );
             for(Restaurant food : cart){
                 System.out.println(food);
             }
@@ -84,16 +86,22 @@ public class Main {
             NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
 
             System.out.println("-----------------------------------------------------------");
-            System.out.println("\n\nPurchase order: ");
+            System.out.println("\nPurchase order: ");
             Scanner paid = new Scanner(System.in);
             System.out.println("Input your money: ");
             paids = userInput.nextDouble();
 
-            Double change;
+            while(paids < 0 || paids < total){
+                System.out.println("Please input again: ");
+                paids = userInput.nextDouble();
+            };
+
+            double change;
             change = paids - total;
             System.out.println("Total price: $" + total);
             System.out.println("Receive: $" + paids);
             System.out.println("Change: $" + change);
+            System.out.println("-----------------------------------------------------------");
 
             mainMenu();
         }
