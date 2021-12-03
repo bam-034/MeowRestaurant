@@ -6,8 +6,6 @@ import java.util.*;
 import java.text.NumberFormat;
 
 public class Main {
-    //private static int numOfCart;
-    //private Restaurant[] menuItems;
 
         public static void mainMenu(){
             System.out.println("\nWelcome to Meow Restaurant Delivery Service!\n");
@@ -17,7 +15,6 @@ public class Main {
             System.out.println("2. Exit");
             System.out.println("-----------------------------------------------------------");
 
-            //menu.printMenu();
             Scanner userInput = new Scanner(System.in);
             System.out.println("Please select number: ");
             int num = userInput.nextInt();
