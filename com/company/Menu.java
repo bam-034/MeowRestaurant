@@ -19,7 +19,7 @@ public class Menu {
         while (iterator.hasNext()) {
             Restaurant menuItem = (Restaurant)iterator.next();
             System.out.print(menuItem.getName() + ", ");
-            System.out.print("Price: " + menuItem.getPrice() + " -- \n");
+            System.out.print("Price: $" + menuItem.getPrice() + " -- \n");
         }
     }
 }

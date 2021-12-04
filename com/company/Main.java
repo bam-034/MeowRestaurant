@@ -79,16 +79,22 @@ public class Main {
             }
             System.out.println("\nTotal price: $" + total);
             total = total + 0.25; //Delivery fee
-            System.out.println("Total price + Delivery fee: $" + total);
+            System.out.println("Total price + Delivery fee($0.25): $" + total);
             System.out.println("-----------------------------------------------------------");
 
             NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
 
             System.out.println("-----------------------------------------------------------");
             System.out.println("\nPurchase order: ");
-            Scanner paid = new Scanner(System.in);
-            System.out.println("Input your money: ");
+            //Scanner paid = new Scanner(System.in);
+
+            String address;
+            System.out.println("Input your address: ");
+            address = userInput.nextLine();
+
+            System.out.println("\nInput your money: ");
             paids = userInput.nextDouble();
+
 
             while(paids < 0 || paids < total){
                 System.out.println("Please input again: ");
