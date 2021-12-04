@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 
 public class DessertHouse extends Food{
-    ArrayList menuItems;
+    private ArrayList menuItems;
 
     public DessertHouse(){
         menuItems = new ArrayList();
