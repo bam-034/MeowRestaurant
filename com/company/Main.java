@@ -69,7 +69,7 @@ public class Main {
             while(keepShopping.equalsIgnoreCase( "y" ));
 
             System.out.println("-----------------------------------------------------------");
-            System.out.println("\nFinal Shopping Cart totals" );
+            System.out.println("\nFinal Shopping Cart totals\n" );
             for(Restaurant food : cart){
                 System.out.println(food);
             }
@@ -77,7 +77,9 @@ public class Main {
             for(int i = 0; i < cart.size(); i++){
                 total = total + cart.get(i).getPrice();
             }
-            System.out.println("Total price: $" + total);
+            System.out.println("\nTotal price: $" + total);
+            total = total + 0.25; //Delivery fee
+            System.out.println("Total price + Delivery fee: $" + total);
             System.out.println("-----------------------------------------------------------");
 
             NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
